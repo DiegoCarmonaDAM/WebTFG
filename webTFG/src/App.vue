@@ -5,12 +5,12 @@
     <form @submit.prevent="login">
       <div class="input-group">
         <label>Correo</label>
-        <input type="email" v-model="email" placeholder="correo@email.com" />
+        <input type="email" v-model="correo" placeholder="correo@email.com" />
       </div>
 
       <div class="input-group">
         <label>Contraseña</label>
-        <input type="password" v-model="password" placeholder="********" />
+        <input type="password" v-model="pass" placeholder="********" />
       </div>
 
       <button type="submit">Entrar</button>
@@ -22,28 +22,25 @@
 import { ref } from 'vue'
 import axios from 'axios'
 
-const email = ref('')
-const password = ref('')
+const correo = ref('')
+const pass = ref('')
 
 async function login() {
   try {
-
     const response = await axios.post(
-      "https://localhost:7001/api/auth/login",
+      "http://localhost:5034/api/auth/login", // 🔹 usa exactamente este URL
       {
-        email: email.value,
-        password: password.value
+        correo: correo.value,
+        pass: pass.value
       }
-    )
+    );
 
-    alert(response.data.message)
-
+    alert(`¡Login correcto! Bienvenido ${response.data.user}`);
   } catch (error) {
-
-    alert("Login incorrecto")
-
+    alert(error.response?.data?.message || "Login incorrecto");
   }
 }
+
 </script>
 
 <style>
