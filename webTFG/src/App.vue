@@ -20,17 +20,29 @@
 
 <script setup>
 import { ref } from 'vue'
+import axios from 'axios'
 
 const email = ref('')
 const password = ref('')
 
-function login() {
-  if (email.value === '' || password.value === '') {
-    alert('Por favor completa todos los campos')
-    return
-  }
+async function login() {
+  try {
 
-  alert(`Email: ${email.value} \nPassword: ${password.value}`)
+    const response = await axios.post(
+      "https://localhost:7001/api/auth/login",
+      {
+        email: email.value,
+        password: password.value
+      }
+    )
+
+    alert(response.data.message)
+
+  } catch (error) {
+
+    alert("Login incorrecto")
+
+  }
 }
 </script>
 
@@ -55,11 +67,12 @@ h1{
 
 .input-group{
   margin-bottom:15px;
+  margin-right: 20px;
 }
 
 input{
   width:100%;
-  padding:10px;
+  padding: 10px;
   margin-top:5px;
   border:1px solid #ccc;
   border-radius:5px;
