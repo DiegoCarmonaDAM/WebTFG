@@ -22,7 +22,8 @@ const refreshKey = ref(0)
 provide('refreshKey', refreshKey)
 </script>
 
-<style scoped>@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 .dashboard {
   height: 100vh;
@@ -39,26 +40,5 @@ provide('refreshKey', refreshKey)
   grid-template-columns: 280px 1fr 300px;
   gap: 0;
   overflow: hidden;
-}
-
-/* Tablet (max 1024px) — oculta paneles laterales, solo centro */
-@media (max-width: 1024px) {
-  .dashboard {
-    height: auto;
-    min-height: 100vh;
-    overflow: auto;
-  }
-  .main {
-    grid-template-columns: 1fr;
-    overflow: visible;
-  }
-}
-
-/* Móvil (max 768px) */
-@media (max-width: 768px) {
-  .main {
-    grid-template-columns: 1fr;
-    overflow: visible;
-  }
 }
 </style>
