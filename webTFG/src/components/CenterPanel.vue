@@ -121,7 +121,7 @@
       </div>
     </div>
 
-    <!-- Modal perfil clientes -->
+    <!-- Modal perfil cliente -->
     <ClienteModal :id-cliente="perfilId" @close="perfilId = null" />
   </div>
 </template>
