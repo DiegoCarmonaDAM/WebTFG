@@ -10,8 +10,8 @@ export const temas = {
     '--color-primary-border-lg': 'rgba(255,92,0,0.4)',
   },
   2: {
-    '--color-primary':        '#00b4d8',
-    '--color-primary-light':  '#0077b6',
+    '--color-primary':        '#22a1e6',
+    '--color-primary-light':  '#00b4d8',
     '--color-primary-bg':     'rgba(0,180,216,0.1)',
     '--color-primary-bg-sm':  'rgba(0,180,216,0.05)',
     '--color-primary-bg-md':  'rgba(0,180,216,0.15)',
