@@ -11,7 +11,7 @@
 .search-input::placeholder { color: #33334a; }
 .search-input:focus { border-color: var(--color-primary); }
 .btn-add { background: var(--color-primary); border: none; border-radius: 8px; padding: 7px 16px; color: #fff; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.1s; }
-.btn-add:hover { background: #ff7722; transform: translateY(-1px); }
+.btn-add:hover { background: var(--color-primary); transform: translateY(-1px); }
 .search-results { position: absolute; top: 72px; right: 24px; width: 300px; background: #16161c; border: 1px solid #2a2a35; border-radius: 10px; z-index: 50; box-shadow: 0 12px 40px rgba(0,0,0,0.5); overflow: hidden; }
 .search-result-row { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.15s; }
 .search-result-row:hover { background: #1e1e2a; }
