@@ -47,7 +47,8 @@ onMounted(() => {
   gap: 0;
   overflow: hidden;
 }
-/* Tablet (max 1024px) — oculta paneles laterales, solo centro */
+
+/* Tablet (max 1024px) — columna única, CenterPanel primero */
 @media (max-width: 1024px) {
   .dashboard {
     height: auto;
@@ -58,6 +59,11 @@ onMounted(() => {
     grid-template-columns: 1fr;
     overflow: visible;
   }
+
+  /* CenterPanel es el segundo hijo → order por defecto sería 2 */
+  .main > :nth-child(1) { order: 2; } /* LeftPanel   → segundo */
+  .main > :nth-child(2) { order: 1; } /* CenterPanel → primero */
+  .main > :nth-child(3) { order: 3; } /* RightPanel  → tercero */
 }
 
 /* Móvil (max 768px) */
@@ -66,5 +72,9 @@ onMounted(() => {
     grid-template-columns: 1fr;
     overflow: visible;
   }
+
+  .main > :nth-child(1) { order: 2; }
+  .main > :nth-child(2) { order: 1; }
+  .main > :nth-child(3) { order: 3; }
 }
 </style>
